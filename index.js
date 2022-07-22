@@ -23,8 +23,8 @@ const db = getFirestore(firebaseApp);
 
 const app = express();
 app.set('port', (process.env.PORT || 3000))
-// app.use(express.static(path.join(__dirname, 'public')));
-// app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'talamus')));
+app.use(bodyParser.json());
 app.use('/app', usersRouter);
 
 
