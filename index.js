@@ -2,9 +2,6 @@ const express = require("express");
 const { initializeApp } = require('firebase/app');
 const { getFirestore, collection, getDocs } = require('firebase/firestore/lite');
 var usersRouter = require('./talamus/app');
-var createError = require('http-errors');
-var path = require('path');
-var bodyParser = require('body-parser');
 
 
 const firebaseConfig = {
@@ -22,8 +19,7 @@ const db = getFirestore(firebaseApp);
 
 
 const app = express();
-// app.use(express.static(path.join(__dirname, 'talamus')));
-app.use(bodyParser.json());
+app.use(express.static(__dirname + '/talamus'));
 app.use('/app', usersRouter);
 
 
@@ -40,34 +36,15 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.json({
-    message: err.message,
-    error: err
-  });
+  res.render('error');
 });
-
-app.use(express.json());
-
-// app.post("/rtctoken", (req, res) => {
-//   // Generate Token Here
-//   const appID = "a12e74a9c9814071b316f55d43bad822";
-//   const appCertificate = "88bb6308b3cc48e0bc614f43f7038470";
-//   const uid = Math.floor(Math.random() * 100000);
-//   const expirationTimeInSeconds = 3600;
-//   const currentTimestamp = Math.floor(Date.now() / 1000);
-//   const privilegeExpiredTs = currentTimestamp + expirationTimeInSeconds;
-//   const role = Agora.RtcRole.SUBSCRIBER;
-//   const channel = req.body.channel;
-//   const token = Agora.RtcTokenBuilder.buildTokenWithUid(appID, appCertificate, channel, uid, role, privilegeExpiredTs);
-//   res.send({ uid, token });
-// });
 // app.get("/", (req, res) => res.send("Agora Auth Token Server"));
 
 
 // app.set('port', (process.env.PORT || 3000))
 
-//   app.listen(app.get('port'), function() {
-//     console.log("Node app is running at localhost:" + app.get('port'))
-//   })
+  // app.listen(app.get('port'), function() {
+  //   console.log("Node app is running at localhost:" + app.get('port'))
+  // })
 
   module.exports = app;
