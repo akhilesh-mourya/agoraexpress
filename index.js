@@ -1,7 +1,7 @@
 const express = require("express");
 const Agora = require("agora-access-token");
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+const { initializeApp } = require('firebase/app');
+const { getFirestore, collection, getDocs } = require('firebase/firestore/lite');
 
 
 const firebaseConfig = {
