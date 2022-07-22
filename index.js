@@ -23,8 +23,8 @@ app.use(express.json());
 
 app.get("/", (req, res) => res.send("Agora Auth Token Server"));
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Agora Auth Token Server listening at Port ${port}`));
+// const port = process.env.PORT || 3000;
+// app.listen(port, () => console.log(`Agora Auth Token Server listening at Port ${port}`));
 
 app.post("/rtctoken", (req, res) => {
     // Generate Token Here
