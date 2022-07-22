@@ -23,7 +23,7 @@ const db = getFirestore(firebaseApp);
 
 const app = express();
 app.use(express.static(path.join(__dirname, 'talamus')));
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 app.use('/app', usersRouter);
 
 
