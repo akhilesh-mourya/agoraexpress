@@ -49,9 +49,9 @@ app.use(function(err, req, res, next) {
 
 // app.use(express.json());
 
-  app.listen(app.get('port'), function(req, res, next) {
-    console.log("Node app is running at localhost:" + app.get('port'))
-    res.send('respond with a resource');
-  })
+  // app.listen(app.get('port'), function(req, res, next) {
+  //   console.log("Node app is running at localhost:" + app.get('port'))
+  //   res.send('respond with a resource');
+  // })
 
   module.exports = app;
