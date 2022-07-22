@@ -19,7 +19,7 @@ const db = getFirestore(firebaseApp);
 
 
 const app = express();
-app.set('port', (process.env.PORT || 5000))
+app.set('port', (process.env.PORT || 3000))
 app.use(express.static(__dirname + '/talamus'));
 
 app.get("/", (req, res) => res.send("Agora Auth Token Server"));
