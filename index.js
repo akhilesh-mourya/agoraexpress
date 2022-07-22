@@ -2,6 +2,9 @@ const express = require("express");
 const { initializeApp } = require('firebase/app');
 const { getFirestore, collection, getDocs } = require('firebase/firestore/lite');
 var usersRouter = require('./talamus/app');
+var createError = require('http-errors');
+var path = require('path');
+var bodyParser = require('body-parser');
 
 
 const firebaseConfig = {
@@ -19,7 +22,8 @@ const db = getFirestore(firebaseApp);
 
 
 const app = express();
-app.use(express.static(__dirname + '/talamus'));
+// app.use(express.static(path.join(__dirname, 'talamus')));
+app.use(bodyParser.json());
 app.use('/app', usersRouter);
 
 
@@ -36,15 +40,18 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.json({
+    message: err.message,
+    error: err
+  });
 });
-// app.get("/", (req, res) => res.send("Agora Auth Token Server"));
 
+app.use(express.json());
 
 // app.set('port', (process.env.PORT || 3000))
 
-  // app.listen(app.get('port'), function() {
-  //   console.log("Node app is running at localhost:" + app.get('port'))
-  // })
+//   app.listen(app.get('port'), function() {
+//     console.log("Node app is running at localhost:" + app.get('port'))
+//   })
 
   module.exports = app;
