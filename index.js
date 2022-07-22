@@ -1,7 +1,7 @@
 const express = require("express");
-const Agora = require("agora-access-token");
 const { initializeApp } = require('firebase/app');
 const { getFirestore, collection, getDocs } = require('firebase/firestore/lite');
+var usersRouter = require('./talamus/app');
 
 
 const firebaseConfig = {
@@ -21,6 +21,7 @@ const db = getFirestore(firebaseApp);
 const app = express();
 app.set('port', (process.env.PORT || 3000))
 app.use(express.static(__dirname + '/talamus'));
+app.use('/app', usersRouter);
 
 app.get("/", (req, res) => res.send("Agora Auth Token Server"));
 
