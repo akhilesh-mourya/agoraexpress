@@ -19,12 +19,11 @@ const db = getFirestore(firebaseApp);
 
 
 const app = express();
-app.use(express.json());
+app.set('port', (process.env.PORT || 5000))
+app.use(express.static(__dirname + '/talamus'));
 
 app.get("/", (req, res) => res.send("Agora Auth Token Server"));
 
-// const port = process.env.PORT || 3000;
-// app.listen(port, () => console.log(`Agora Auth Token Server listening at Port ${port}`));
 
 app.post("/rtctoken", (req, res) => {
     // Generate Token Here
@@ -39,3 +38,7 @@ app.post("/rtctoken", (req, res) => {
     const token = Agora.RtcTokenBuilder.buildTokenWithUid(appID, appCertificate, channel, uid, role, privilegeExpiredTs);
     res.send({ uid, token });
   });
+
+  app.listen(app.get('port'), function() {
+    console.log("Node app is running at localhost:" + app.get('port'))
+  })
