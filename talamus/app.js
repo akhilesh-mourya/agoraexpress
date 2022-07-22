@@ -2,11 +2,6 @@ var express = require('express');
 var router = express.Router();
 const Agora = require("agora-access-token");
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
-
 
 router.post("/rtctoken", (req, res) => {
 
@@ -24,5 +19,11 @@ router.post("/rtctoken", (req, res) => {
     // res.render('token', { req });
     res.send({ token, uid });
   });
+  /* GET users listing. */
+router.get('/', function(req, res, next) {
+    res.send('respond with a resource');
+  });
+  
+  
 
 module.exports = router;
