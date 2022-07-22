@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "pre-deploy": "node deleteLastDeploy.js",
-    "deploy": "npm run pre-deploy && now --public && now alias"
+    "deploy": "npm run pre-deploy && now --public && now alias",
+    "postdeploy": "node index.js"
+
   },
   "repository": {
     "type": "git",
