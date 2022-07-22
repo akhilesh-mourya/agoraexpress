@@ -1,5 +1,22 @@
 const express = require("express");
 const Agora = require("agora-access-token");
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBfb_9dnBRz-WiKVU2m2O5bZR5tW-b1MwU",
+  authDomain: "talamus-818e3.firebaseapp.com",
+  projectId: "talamus-818e3",
+  storageBucket: "talamus-818e3.appspot.com",
+  messagingSenderId: "768691742758",
+  appId: "1:768691742758:web:19f2ee58ad9497d8235ee7",
+  measurementId: "G-T3YM1JCJB5"
+};
+
+const firebaseApp = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
 
 const app = express();
 app.use(express.json());
