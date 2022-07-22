@@ -1,0 +1,23 @@
+{
+  "name": "agoraexpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akhilesh-mourya/agoraexpress.git"
+  },
+  "author": "Akhilesh Mourya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akhilesh-mourya/agoraexpress/issues"
+  },
+  "homepage": "https://github.com/akhilesh-mourya/agoraexpress#readme",
+  "dependencies": {
+    "agora-access-token": "^2.0.4",
+    "express": "^4.18.1"
+  }
+}
