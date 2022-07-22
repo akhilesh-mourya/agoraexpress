@@ -15,7 +15,7 @@ const firebaseConfig = {
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const db = getFirestore(firebaseApp);
 
 
 const app = express();
