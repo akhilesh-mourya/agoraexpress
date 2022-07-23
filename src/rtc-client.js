@@ -125,48 +125,48 @@ export default class RTCClient {
       //     console.log('Error sending message:', error)
       //   })
 
-      var postData = JSON.stringify({
-        'message': {
-          'token': 'c61I6Z2U_kphrwqcsAE0ZY:APA91bHeuUsVs1QLziCFxIa-47-OMPQjVtd6yq_Jh6nrpEmYo2C4yDRX_IH4oUa8eUqNXrxiXz6D1JWm-sQ6a-tTk0T20hU4yKMsXm1Fvsc5je-DSr9tKegvG7tplrFTJcIavFzea6xj',
-          'data': {
-            'body': 'Body of Your Notification in data',
-            'title': 'Title of Your Notification in data',
-            'key_1': 'Value for key_1',
-            'key_2': 'Value for key_2'
-          }
-        }
-      })
+      // var postData = JSON.stringify({
+      //   'message': {
+      //     'token': 'c61I6Z2U_kphrwqcsAE0ZY:APA91bHeuUsVs1QLziCFxIa-47-OMPQjVtd6yq_Jh6nrpEmYo2C4yDRX_IH4oUa8eUqNXrxiXz6D1JWm-sQ6a-tTk0T20hU4yKMsXm1Fvsc5je-DSr9tKegvG7tplrFTJcIavFzea6xj',
+      //     'data': {
+      //       'body': 'Body of Your Notification in data',
+      //       'title': 'Title of Your Notification in data',
+      //       'key_1': 'Value for key_1',
+      //       'key_2': 'Value for key_2'
+      //     }
+      //   }
+      // })
 
 
-      var options = {
-        hostname: 'fcm.googleapis.com',
-        path: '/v1/projects/talamus-818e3/messages:send',
-        method: 'POST',
-        headers: {
-          'access_token': 'ya29.A0AVA9y1t848wIeRxH_epC_nQzsce3gbvS_EtfUYdFW01WmgtsZNZa_7ypwjhYN4d23-8VtaBS_CIoEYGribBA_TfK5NuW8PbPyIMAf0pcHu9kJAWhd5PJytBi3A21vBgOXnYpv3PGVdbw-deE0XQwE5RHtFTkYUNnWUtBVEFTQVRBU0ZRRTY1ZHI4UXh2S2IzWGE0V3NyblQxbFF1WVNRdw0163',
-          'Content-Type': 'application/json',
-          // 'Access-Control-Allow-Origin': 'http://localhost:8082',
-          // 'Access-Control-Allow-Credentials': 'true',
-          // 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-          // 'Access-Control-Allow-Headers' : 'Origin, Content-Type, Accept',
-          // 'Origin': 'http://localhost:8082'
-        }
-      }
+      // var options = {
+      //   hostname: 'fcm.googleapis.com',
+      //   path: '/v1/projects/talamus-818e3/messages:send',
+      //   method: 'POST',
+      //   headers: {
+      //     'access_token': 'ya29.A0AVA9y1t848wIeRxH_epC_nQzsce3gbvS_EtfUYdFW01WmgtsZNZa_7ypwjhYN4d23-8VtaBS_CIoEYGribBA_TfK5NuW8PbPyIMAf0pcHu9kJAWhd5PJytBi3A21vBgOXnYpv3PGVdbw-deE0XQwE5RHtFTkYUNnWUtBVEFTQVRBU0ZRRTY1ZHI4UXh2S2IzWGE0V3NyblQxbFF1WVNRdw0163',
+      //     'Content-Type': 'application/json',
+      //     // 'Access-Control-Allow-Origin': 'http://localhost:8082',
+      //     // 'Access-Control-Allow-Credentials': 'true',
+      //     // 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      //     // 'Access-Control-Allow-Headers' : 'Origin, Content-Type, Accept',
+      //     // 'Origin': 'http://localhost:8082'
+      //   }
+      // }
     
 
-      var req = https.request(options, (res) => {
-        console.log('Date in Response header:', res)
-        res.on('data', (d) => {
-          console.log('message=========', d)
-        })
+      // var req = https.request(options, (res) => {
+      //   console.log('Date in Response header:', res)
+      //   res.on('data', (d) => {
+      //     console.log('message=========', d)
+      //   })
 
-      }).on('error', err => {
-        console.log('Error: ', err.message)
-      })
+      // }).on('error', err => {
+      //   console.log('Error: ', err.message)
+      // })
 
   
-      req.write(postData)
-      req.end()
+      // req.write(postData)
+      // req.end()
 
       // fetch('http://localhost:5001/talamus-818e3/us-central1/sendNotification', {
       //   method: 'POST',
